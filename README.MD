@@ -1,15 +1,14 @@
-# SIP WATER STRESS CALCULATION
-
+# SIP MOISTURE ANOMALY
 Some brief summary should be here
 
 ## Build image
-`docker build -t quantumobile/sip_water_stress .`
+`docker build -t quantumobile/sip_moisture_anomaly .`
 
 ## Pull image
-`docker pull quantumobile/sip_water_stress`
+`docker pull quantumobile/sip_moisture_anomaly`
 
 ## Push to registry
-`docker push quantumobile/sip_water_stress`
+`docker push quantumobile/sip_moisture_anomaly`
 
 ## Docker run command
 
@@ -24,12 +23,12 @@ docker run \
     -v `pwd`/api-key-retriever.json:/input/api-key-retriever.json \
     -v `pwd`/data/SENTINEL2_CACHE:/input/SENTINEL2_CACHE \
     -v `pwd`/data/results:/output \
-    quantumobile/sip_water_stress
+    quantumobile/sip_moisture_anomaly
 ```
 
 ## Example result
 
-![](./example/water_stress_2019-05-01_2019-08-30.jpeg)
+![](./example/moisture_anomaly_2019-05-01_2019-08-30.jpeg)
 
 
 ## How to add model to SIP
@@ -38,7 +37,7 @@ ____
 1. Open Admin page, `localhost:9000/admin/`
 2. In AOI block select `Components` and click on `+Add`
     * Add <b>Component name</b>: `Add your name`
-    * Add <b>Image</b>: `quantumobile/sip_water_stress`
+    * Add <b>Image</b>: `quantumobile/sip_moisture_anomaly`
     * Select <b>Sentinel Google API key is required</b>
     * Deselect <b>GPU is needed for a component to run</b>
 3. <b>SAVE</b>
