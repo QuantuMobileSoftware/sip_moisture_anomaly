@@ -1,5 +1,4 @@
 # SIP MOISTURE ANOMALY
-Some brief summary should be here
 
 ## Build image
 `docker build -t quantumobile/sip_moisture_anomaly .`
