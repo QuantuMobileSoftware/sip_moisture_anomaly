@@ -38,7 +38,7 @@ ____
 1. Open Admin page, `localhost:9000/admin/`
 2. In AOI block select `Components` and click on `+Add`
     * Add <b>Component name</b>: `Add your name`
-    * Add <b>Image</b>: `quantumobile/sip_landcover`
+    * Add <b>Image</b>: `quantumobile/sip_water_stress`
     * Select <b>Sentinel Google API key is required</b>
     * Deselect <b>GPU is needed for a component to run</b>
 3. <b>SAVE</b>
