@@ -27,7 +27,7 @@ docker run \
 
 ## Example result
 
-![](./example/moisture_anomaly_2019-05-01_2019-08-30.jpeg)
+![](./example/moisture_anomaly_2019-05-01_2019-08-30.jpg)
 
 
 ## How to add model to SIP
