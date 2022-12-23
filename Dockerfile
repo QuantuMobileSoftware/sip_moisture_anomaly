@@ -15,4 +15,4 @@ COPY ./ .
 RUN pip install jupyter==1.0.0
 RUN pip install -r requirements.txt
 
-CMD ["jupyter", "nbconvert", "--inplace", "--to=notebook", "--execute", "./water_anomaly_calculation.ipynb"]
+CMD ["jupyter", "nbconvert", "--inplace", "--to=notebook", "--execute", "./moisture_anomaly_calculation.ipynb"]

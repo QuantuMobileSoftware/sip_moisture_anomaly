@@ -1,7 +1,5 @@
 import os
-import re
 import numpy as np
-import pandas as pd
 import geopandas as gpd
 import rasterio
 
@@ -74,40 +72,6 @@ def check_nodata(loadings, product_type, limit=15.0, nodata=0):
                         filtered_folders.add(folder)
         filtered[tile] = filtered_folders
     return filtered
-
-
-def get_min_clouds(
-    loadings,
-    max_ptc=5,
-    cloud_regex=r"\<CLOUDY_PIXEL_PERCENTAGE\>[0-9]*\.?[0-9]*</CLOUDY_PIXEL_PERCENTAGE>",
-):
-    filtered = dict()
-    min_ptc = max_ptc
-
-    for tile, folders in loadings.items():
-        filtered_folders = set()
-        for folder in folders:
-            for file in os.listdir(folder):
-
-                if "MTD_TL.xml" in file:  # MTD_TL.xml
-
-                    with open(os.path.join(folder, file)) as f:
-                        ptc = f.read()
-                        ptc = re.search(cloud_regex, ptc)
-
-                        if ptc is not None:
-                            ptc = "".join(
-                                [x for x in ptc.group(0) if x.isdigit() or x == "."]
-                            )
-                            filtered_folders.add((ptc, folder))
-
-                else:
-                    filtered_folders.add(("50", folder))
-
-        filtered[tile] = sorted(filtered_folders)[0][1]
-
-    return filtered
-
 
 def transform_resolution(data_path, save_path, resolution=(10, 10)):
     with rasterio.open(data_path) as src:
