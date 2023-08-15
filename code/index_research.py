@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 import rasterio
 from pathlib import Path
-from .download.utils import transform_resolution
 
 
 def calculate_ndvi(b04_path, b08_path, out_path=None, nodata=0):
