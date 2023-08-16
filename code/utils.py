@@ -94,7 +94,7 @@ def stitch_tiles(paths, out_raster_path):
     return out_raster_path
 
 
-def dump_no_data_geosjon(polygon, geojson_path, metadata):
+def dump_no_data_geojson(polygon, geojson_path, metadata):
     label = 'No data'
     style = dict(color='red')
     feature = geojson.Feature(geometry=polygon, properties=dict(label=label, style=style))
