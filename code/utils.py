@@ -92,16 +92,3 @@ def stitch_tiles(paths, out_raster_path):
         dst.write(tile_arr)
     
     return out_raster_path
-
-
-def dump_no_data_geojson(polygon, geojson_path, metadata):
-    label = 'No data'
-    style = dict(color='red')
-    feature = geojson.Feature(geometry=polygon, properties=dict(label=label, style=style))
-    feature['start_date'] = metadata["START_DATE"]
-    feature['end_date'] = metadata["END_DATE"]
-    feature['request_id'] = metadata["REQUEST_ID"]
-    feature['name'] = f'{metadata["NAME"]}\nNo data available'
-
-    with open(geojson_path, 'w') as f:
-        geojson.dump(feature, f)
